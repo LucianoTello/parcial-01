@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div-contenedor">
+        <div class="div-input">
+            <h2>Cargar nuevo Empleado</h2>
+            <form>
+                <p>Ingrese nombre</p>
+                <input type="text" id="nombre" class="input-form" autocomplete="off" autofocus>
+                <p>Ingrese cantidad de horas</p>
+                <input type="number" id="canthoras" class="input-form" >
+                <p>Ingrese precio de hora</p>
+                <input type="number" id="preciohora" class="input-form" >
+                <br><br>
+                <button type="submit" (click)="guardar()" class="btn-cargar">Cargar empleado</button>
+                <br><br>
+                <button (click)="limpiar()" class="btn-limpiar">Limpiar pantalla</button>                
+            </form>
+          
+            <label>------------------------------------------------------------</label>
+            <p>Si desea eliminar un empleado</p>
+            <p>Ingrese el codigo del empleado que desea eliminar</p>
+            <input type="number" id="codi" class="input-form">
+            <br><br>
+            <button (click)="eliminar()" class="btn-eliminar">eliminar</button>
+            <br>
+            <label>------------------------------------------------------------</label>
+            <br>
+            <br>
+            <button (click)="eliminartodos()" class="btn-eliminartodos">Click aqui para eliminar todos los empleados</button>
+        </div>
+        <div class="div-output">
+            <h2>Lista de Empleados</h2>
+            <table>
+                <tr>
+                    <th>codigo</th>
+                    <th>nombre</th>
+                    <th>cantidad horas</th>    
+                    <th>precio hora</th>
+                    <th>total a pagar</th>
+                </tr>
+                <tr>
+                    <th ><li *ngFor="let codigo of Empleados; let i=index">{{Empleados[i].codigo}}</li></th>  
+                    <th ><li *ngFor="let nombre of Empleados; let i=index"><input class="input-tabla" value="{{Empleados[i].nombre}}"></li></th>                
+                    <th ><li *ngFor="let canthoras of Empleados; let i=index"><input class="input-tabla" id="numerico" (keyup)="calcular()" value="{{Empleados[i].canthoras}}" [(ngModel)]="this.Empleados[i].canthoras"></li></th>                
+                    <th ><li *ngFor="let preciohora of Empleados; let i=index"><input class="input-tabla" id="numerico" type="number" (keyup)="calcular()" value="{{Empleados[i].preciohora}}" [(ngModel)]="this.Empleados[i].preciohora"></li></th>                
+                    <th ><li *ngFor="let totapagar of Empleados; let i=index">{{Empleados[i].totapagar}}</li></th>
+                </tr>
+            
+            </table>
+        </div>
+    </div>   
+</body>
+</html>

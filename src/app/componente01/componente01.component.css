@@ -1,0 +1,73 @@
+
+li{
+    list-style-type: none;
+}
+
+.input-tabla{
+    border:0;
+    text-align: center;
+    width:100%;
+    background-color: rgb(178, 248, 248);
+}
+
+.div-contenedor{
+    display: flex;
+}
+
+.div-input{
+    border: solid 1px;
+    padding: 20px;
+}
+
+.div-output{
+    
+    margin-left: 100px;
+}
+
+#numerico{
+    width:70px;
+}
+
+table{
+    background-color: white;
+    width: 700px;
+    border: solid 1px;
+}
+
+tr, th{
+    border: solid 1px;
+}
+
+p{
+    text-align: center;
+}
+
+.input-form{
+    width: 200px;
+    margin-left: 20%;
+    text-align: center;
+}
+
+form{
+    justify-content: center;
+}
+
+.btn-eliminar{
+    margin-left: 40%;
+}
+
+.btn-eliminartodos{
+    margin-left: 6%;
+}
+
+.btn-cargar{
+    margin-left: 35%;
+}
+
+.btn-limpiar{
+    margin-left: 36%;
+}
+
+h2{
+    text-align: center;
+}
